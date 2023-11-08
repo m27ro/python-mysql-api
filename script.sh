@@ -27,6 +27,7 @@ docker exec -it sakila bash -c "mysql -uroot -p1234 -e 'SOURCE sakila-data.sql;'
 
 
 # Install Flask and mysql-connector-python using pip
+pip install --upgrade pip
 pip install flask mysql-connector-python
 
 # Run the Python script using Python 3.8
