@@ -1,6 +1,7 @@
 version: '3.3'
 services:
   db:
+    container_name: sakila
     build: .
     command: --default-authentication-plugin=mysql_native_password
     restart: always

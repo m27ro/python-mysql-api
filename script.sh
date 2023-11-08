@@ -7,15 +7,27 @@ docker-compose up -d
 echo "		"
 echo "		"
 echo "		"
-echo "Please wait until the database is ready"
+
+bold=$(tput bold)
+italic=$(tput sitm)
+reset=$(tput sgr0)
+
+echo "${bold}${italic}Please wait until the database is ready.${reset}"
+
 sleep 55
 
 # Execute a command inside the container
-docker exec -it sakila-db_db_1 bash -c "mysql -uroot -p1234 -e 'CREATE DATABASE sakila;'"
+docker exec -it sakila bash -c "mysql -uroot -p1234 -e 'CREATE DATABASE sakila;'"
 
 # Execute a command inside the container
-docker exec -it sakila-db_db_1 bash -c "mysql -uroot -p1234 -e 'SOURCE sakila-schema.sql;'"
+docker exec -it sakila bash -c "mysql -uroot -p1234 -e 'SOURCE sakila-schema.sql;'"
 
 # Execute another command inside the container
-docker exec -it sakila-db_db_1 bash -c "mysql -uroot -p1234 -e 'SOURCE sakila-data.sql;'"
+docker exec -it sakila bash -c "mysql -uroot -p1234 -e 'SOURCE sakila-data.sql;'"
 
+
+# Install Flask and mysql-connector-python using pip
+pip install flask mysql-connector-python
+
+# Run the Python script using Python 3.8
+python3.8 app-api.py
