@@ -4,11 +4,13 @@ This repository contains a Python MySQL API for performing CRUD operations on a 
 1.Clone the repository:
 
 git clone https://github.com/m27ro/python-mysql-api.git
+
 cd python-mysql-api/
 
 2.Run the script to set up the database and start the application:
 
 chmod +x script.sh
+
 ./script.sh
 
 3.Test the application by using the following commands:
