@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  db:
+    build: .
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: sakila
+      MYSQL_USER: sakila
+      MYSQL_PASSWORD: sakila
+    ports:
+      - "3306:3306"
+
