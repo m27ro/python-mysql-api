@@ -16,12 +16,15 @@ chmod +x script.sh
 3.Test the application by using the following commands:
 
 -**POST Method - Insert data:**
+
 curl -X POST -H "Content-Type: application/json" -d '{"first_name":"", "last_name":""}' http://localhost:8443/post_actor
 
 -**GET Method - Fetch data:**
+
 curl -L http://localhost:8443/get_actors
 
 -**GET Method - Fetch more data:**
+
 curl -L http://localhost:8443/get_actors_id
 
 
