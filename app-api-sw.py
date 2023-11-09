@@ -1,7 +1,21 @@
 from flask import Flask, jsonify, request
+from flask_swagger_ui import get_swaggerui_blueprint
 import mysql.connector
 
 app = Flask(__name__)
+
+SWAGGER_URL = '/api/docs' 
+API_URL = '/static/swagger.json'
+
+swaggerui_blueprint = get_swaggerui_blueprint(
+   SWAGGER_URL, # Swagger UI static files will be mapped to '{SWAGGER_URL}/dist/'
+   API_URL,
+   config={ # Swagger UI config overrides
+       'app_name': "Python Flask MySQL Swagger"
+   }
+)
+
+app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
 
 def connect_to_db():
    cnx = mysql.connector.connect(user='sakila', password='sakila',
