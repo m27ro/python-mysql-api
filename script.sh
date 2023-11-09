@@ -31,4 +31,4 @@ pip install --upgrade pip
 pip install flask mysql-connector-python
 
 # Run the Python script using Python 3.8
-python3.8 app-api.py
+python app-api.py
