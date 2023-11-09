@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 def connect_to_db():
    cnx = mysql.connector.connect(user='sakila', password='sakila',
-                            host='mpy', database='sakila')
+                            host='localhost', database='sakila')
    return cnx
 
 @app.route('/get_actors', methods=['GET'])
