@@ -27,6 +27,10 @@ curl -L http://localhost:8443/get_actors
 
 curl -L http://localhost:8443/get_actors_id
 
+4.Swagger-UI:
+https://localhost:8443/api/docs/
+
+
 
 Please note that you need to have cURL,docker and docker-compose installed on your system to execute the above commands.
 
