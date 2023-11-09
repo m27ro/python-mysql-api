@@ -33,4 +33,4 @@ pip install flask mysql-connector-python
 pip install flask-swagger-ui
 
 # Run the Python script using Python
-python app-api.py
+python app-api-sw.py
